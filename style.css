@@ -1,0 +1,260 @@
+/* Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a2637;
+    color: white;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 480px; /* Mobile first width */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 70px; /* Space for bottom nav */
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Common Header Style */
+.header { display: flex; justify-content: space-between; align-items: center; padding: 16px; background-color: #1a1a1a; }
+.language-btn { color: white; text-decoration: none; display: flex; align-items: center; }
+.flag-icon { width: 20px; height: 15px; margin-left: 5px; }
+
+/* Homepage Styles - HERO SECTION UPDATED */
+.hero {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Default to row layout */
+    align-items: flex-start; /* Align items to top */
+    justify-content: space-between;
+    gap: 15px;
+}
+.hero-text {
+    font-size: 24px; /* Base size */
+    font-weight: bold;
+    line-height: 1.2;
+    flex-grow: 1;
+    text-align: left; /* Text left */
+    margin-bottom: 0;
+}
+.hero-image {
+    width: 130px; /* ** Adjusted base width ** */
+    height: auto;
+    flex-shrink: 0;
+    margin-top: 0; /* Align top */
+}
+
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 0 10px; margin-top: 20px; }
+.feature-container, .assets-feature { display: flex; flex-direction: column; align-items: center; cursor: pointer; text-align: center;}
+.feature, .assets-feature-icon { display: flex; flex-direction: column; align-items: center; background-color: #242424; border-radius: 50%; width: 70px; height: 70px; justify-content: center; margin: 0 auto 8px auto; font-size: 24px; }
+.feature-icon { color: #36c8d9; margin-bottom: 0; }
+.assets-feature-icon div { color: #36c8d9; }
+.feature-text { font-size: 12px; margin-top: 5px; color: #fff; line-height: 1.2; }
+
+.tabs { display: flex; padding: 0 20px; border-bottom: 1px solid #333; margin-top: 30px; overflow-x: auto; }
+.tab { padding: 10px 0; margin-right: 20px; font-size: 16px; color: #777; cursor: pointer; white-space: nowrap; }
+.tab.active { color: white; border-bottom: 2px solid #1e90ff; }
+
+.table { padding: 10px 20px; }
+.table-header { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #333; font-size: 14px; color: #aaa;}
+.price-info { color: #777; font-size: 14px; }
+.table-row { padding: 15px 0; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+.table-row:last-child { border-bottom: none; }
+.table-row > div:nth-child(1) { flex-basis: 30%; }
+.table-row > div:nth-child(2) { flex-basis: 35%; text-align: right; }
+.table-row > div:nth-child(3) { flex-basis: 35%; text-align: right; }
+
+/* Assets Page Styles */
+ .profile-section { padding: 20px; display: flex; align-items: center; }
+ .profile-pic { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 15px; background-color: #555; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+ .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+ .profile-info { flex: 1; min-width: 0; }
+ .username { font-size: 18px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ .vip-badge { display: inline-block; background-color: #ff7f50; color: white; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-left: 5px; }
+ .assets-card { background-color: #242424; border-radius: 10px; margin: 10px 20px; padding: 20px; }
+ .assets-label { font-size: 16px; color: #aaa; margin-bottom: 10px; }
+ .assets-amount { font-size: 32px; font-weight: bold; color: #1e90ff; margin-bottom: 20px; word-wrap: break-word; }
+ .limits-container { display: flex; flex-direction: column; }
+ .limit { flex: 1; padding-right: 0; margin-bottom: 10px; } .limit:last-child { margin-bottom: 0; }
+ .limit-label { font-size: 14px; color: #aaa; }
+ .limit-amount { font-size: 18px; font-weight: bold; margin-top: 5px; word-wrap: break-word;}
+
+ .menu-list { margin: 20px; }
+ .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #333; cursor: pointer; }
+ .menu-item:last-child { border-bottom: none; }
+ .menu-text { font-size: 16px; }
+ .chevron { color: #666; }
+ .signout-btn { background-color: #1e90ff; color: white; border: none; border-radius: 30px; padding: 15px; width: 100%; font-size: 16px; margin-top: 20px; cursor: pointer; }
+
+ .currency-assets { margin: 20px; }
+ .section-title { font-size: 18px; margin-bottom: 15px; }
+ .currency-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #333; }
+ .currency-item:last-child { border-bottom: none; }
+ .currency-logo { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center; background-color: #242424; font-weight: bold; flex-shrink: 0; }
+ .currency-info { flex: 1; min-width: 0; }
+ .currency-name { font-size: 16px; font-weight: bold; }
+ .currency-type { font-size: 12px; color: #888; }
+ .currency-value { text-align: right; min-width: 0; }
+ .currency-amount { font-size: 16px; font-weight: bold; word-wrap: break-word; }
+ .currency-usd { font-size: 12px; color: #888; word-wrap: break-word; }
+ .currency-left { display: flex; align-items: center; min-width: 0; }
+
+/* Shared Form Styles */
+.form-page { padding: 20px; }
+.form-page h2 { margin-bottom: 20px; text-align: center; font-weight: normal; color: #aaa; font-size: 18px; }
+.form-section { margin-bottom: 20px; padding: 15px; background-color: #242424; border-radius: 8px; }
+.form-section label { display: block; margin-bottom: 8px; color: #aaa; font-size: 14px; }
+.form-section input, .form-section select { width: 100%; padding: 12px; background-color: #1a1a1a; border: 1px solid #333; color: white; border-radius: 5px; font-size: 16px; margin-bottom: 5px; }
+.balance-info { display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #aaa; margin-top: 10px; }
+.balance-amount { color: #1e90ff; font-weight: bold; }
+.verification-code-section { display: flex; align-items: center; gap: 10px; }
+.verification-code-section input { flex-grow: 1; }
+.captcha-image-placeholder { width: 100px; height: 40px; background-color: #ccc; border: 1px solid #555; display: flex; align-items: center; justify-content: center; color: #333; font-family: 'Courier New', Courier, monospace; font-size: 18px; border-radius: 4px; cursor: pointer; }
+.info-text { color: #ff4d4d; font-size: 12px; text-align: center; margin-top: 25px; }
+.submit-button, .back-button { background-color: #1e90ff; color: white; border: none; border-radius: 30px; padding: 15px; width: 100%; font-size: 16px; margin-top: 20px; cursor: pointer; text-align: center; display: block; text-decoration: none; }
+.back-button { background-color: #555; margin-top: 10px; }
+
+/* Withdraw Page Specific Styles */
+#withdraw-page .currency-display-section { display: flex; align-items: center; justify-content: space-between; background-color: #242424; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+#withdraw-page .currency-display-left { display: flex; align-items: center; }
+#withdraw-page .currency-display-logo { width: 40px; height: 40px; border-radius: 50%; background-color: #00b894; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; color: white; margin-right: 10px; }
+#withdraw-page .currency-display-name { font-size: 16px; font-weight: bold; }
+#withdraw-page .currency-display-network { font-size: 14px; color: #aaa; }
+
+/* Error Message Display Style */
+.error-display {
+    display: none; /* Hidden by default */
+    background-color: #442a2a;
+    color: #ffdddd;
+    border: 1px solid #ff4d4d;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px; /* Base font size */
+    line-height: 1.5;
+    text-align: left;
+}
+ .error-display strong {
+     display: block;
+     font-size: 1.1em;
+     margin-bottom: 8px;
+     color: white;
+ }
+
+/* Bottom Navigation */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #1a1a1a; display: flex; justify-content: center; padding: 10px 0; border-top: 1px solid #333; z-index: 1000; }
+.bottom-nav-inner { display: flex; justify-content: space-around; width: 100%; max-width: 480px; margin: 0 auto; }
+.nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #777; font-size: 12px; cursor: pointer; flex: 1; text-align: center; padding: 0 5px; }
+.nav-item.active { color: #1e90ff; }
+.nav-icon { font-size: 20px; margin-bottom: 2px; }
+
+/* Page Content Display */
+.page-content { display: none; }
+.page-content.active { display: block; }
+
+/* --- Responsive Styles --- */
+/* Full Width Desktop Layout with Large Elements */
+
+@media (min-width: 768px) { /* Tablet / Small Desktop */
+    .container {
+        max-width: none; /* Full Width Container */
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .bottom-nav-inner {
+        max-width: none; /* Full Width Nav Items */
+        padding: 0 20px;
+    }
+
+    .hero, .features, .tabs, .table, .profile-section, .assets-card, .currency-assets, .menu-list, .form-page {
+        max-width: none; /* Allow full width */
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 5%; /* Add padding inside content blocks */
+        padding-right: 5%;
+    }
+    .tabs { padding-left: 0; padding-right: 0;}
+    .table { padding-left: 0; padding-right: 0;}
+
+    /* Hero section desktop adjustments */
+     .hero { align-items: center; }
+     .hero-text { font-size: 28px; }
+     .hero-image { width: 150px; } /* Adjusted size */
+
+    .features { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .limits-container { flex-direction: row; }
+    .limit { margin-bottom: 0; padding-right: 15px; }
+    .limit:last-child { padding-right: 0; }
+    .table-header, .table-row { font-size: 17px; }
+    .price-info { font-size: 17px; }
+
+    /* Large form elements */
+    .form-page { max-width: 95%; }
+    .form-page h2 { font-size: 26px; margin-bottom: 30px; }
+    .form-section label { font-size: 17px; margin-bottom: 12px;}
+    .form-section input, .form-section select { padding: 16px; font-size: 19px; }
+    .balance-info { font-size: 17px; }
+    .verification-code-section input { font-size: 19px; }
+    .captcha-image-placeholder { width: 130px; height: 50px; font-size: 24px; }
+    .info-text { font-size: 15px; }
+    .submit-button, .back-button { padding: 18px; font-size: 19px; max-width: 450px; margin-left: auto; margin-right: auto; }
+    #withdraw-page .currency-display-section { padding: 25px; margin-bottom: 25px;}
+    #withdraw-page .currency-display-logo { width: 55px; height: 55px; font-size: 26px; margin-right: 18px;}
+    #withdraw-page .currency-display-name { font-size: 20px; }
+    #withdraw-page .currency-display-network { font-size: 17px; }
+
+    /* Larger Error Message */
+    .error-display { font-size: 16px; padding: 20px; }
+     .error-display strong { font-size: 1.15em; margin-bottom: 10px;}
+}
+
+@media (min-width: 1024px) { /* Desktop */
+     .container {
+         padding-left: 50px;
+         padding-right: 50px;
+     }
+     .hero, .features, .tabs, .table, .profile-section, .assets-card, .currency-assets, .menu-list, .form-page {
+         padding-left: 10%;
+         padding-right: 10%;
+     }
+     .tabs { padding-left: 0; padding-right: 0;}
+     .table { padding-left: 0; padding-right: 0;}
+     #assets-page .features { max-width: 700px; margin-left: auto; margin-right: auto;}
+
+    .hero-text { font-size: 34px; }
+    .hero-image { width: 170px; } /* Adjusted size */
+
+    .currency-assets { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .currency-item { border-bottom: 1px solid #333; }
+
+     /* Even larger form elements */
+     .form-page h2 { font-size: 28px; margin-bottom: 35px;}
+     .form-section label { font-size: 18px;}
+     .form-section input, .form-section select { padding: 18px; font-size: 20px; }
+     .balance-info { font-size: 18px; }
+     .verification-code-section input { font-size: 20px; }
+     .captcha-image-placeholder { width: 140px; height: 55px; font-size: 26px; }
+     .info-text { font-size: 16px; }
+     .submit-button, .back-button { padding: 22px; font-size: 20px; margin-top: 30px; max-width: 500px;}
+     .back-button { margin-top: 18px; }
+     #withdraw-page .currency-display-section { padding: 30px; margin-bottom: 30px;}
+     #withdraw-page .currency-display-logo { width: 60px; height: 60px; font-size: 28px; margin-right: 20px;}
+     #withdraw-page .currency-display-name { font-size: 24px; }
+     #withdraw-page .currency-display-network { font-size: 19px; }
+
+     /* Even Larger Error Message */
+     .error-display { font-size: 18px; padding: 25px; }
+      .error-display strong { font-size: 1.2em; margin-bottom: 12px;}
+}
