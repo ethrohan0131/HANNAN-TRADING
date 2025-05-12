@@ -153,6 +153,308 @@ body {
      color: white;
  }
 
+/* Debit Card Page Styles - MOBILE FIRST */
+.debit-card-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+.debit-card-back-arrow {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+}
+
+.debit-card-page-title {
+    text-align: center;
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.debit-card-section {
+    padding: 20px 15px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    margin: 15px;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.debit-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.debit-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.debit-user-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.debit-pro-badge {
+    background-color: #FF6B00;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.debit-balance-section {
+    margin-top: 40px;
+}
+
+.debit-balance-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.debit-balance-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4A9EFF;
+    word-break: break-all;
+}
+
+.debit-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.debit-action-button {
+    flex: 1;
+    min-width: 90px;
+    padding: 14px 10px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.debit-action-button:hover {
+    border-color: #4A9EFF;
+    color: #4A9EFF;
+}
+
+.debit-financial-balance {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.debit-financial-balance-value {
+    font-size: 16px;
+    color: white;
+}
+
+.debit-transaction-section {
+    margin: 15px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.debit-transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.debit-transaction-header h3 {
+    font-size: 16px;
+    color: white;
+}
+
+.debit-total-amount {
+    font-size: 14px;
+    color: #4A9EFF;
+    font-weight: bold;
+}
+
+.debit-transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.debit-transaction-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.debit-transaction-list::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 2px;
+}
+
+.debit-transaction-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 2px;
+}
+
+.debit-transaction-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.debit-transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #242424;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.debit-transaction-item:hover {
+    background-color: #2a2a2a;
+    transform: translateX(3px);
+}
+
+.debit-transaction-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.debit-transaction-icon.deposit {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.debit-transaction-icon.transfer {
+    background-color: rgba(74, 158, 255, 0.2);
+    color: #4A9EFF;
+}
+
+.debit-transaction-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.debit-transaction-type {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.debit-transaction-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.debit-transaction-amount {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.debit-transaction-amount.positive {
+    color: #4CAF50;
+}
+
+/* Card glow effect */
+.debit-card-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74, 158, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Animations - mobile optimized */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.debit-transaction-section {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.debit-transaction-item {
+    animation: fadeInUp 0.3s ease-out;
+    animation-fill-mode: backwards;
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 600px) {
+    .debit-transaction-item {
+        animation-duration: 0.2s;
+    }
+    
+    .debit-transaction-item:hover {
+        transform: none;
+    }
+}
+
+/* Stagger animations */
+.debit-transaction-item:nth-child(1) { animation-delay: 0.1s; }
+.debit-transaction-item:nth-child(2) { animation-delay: 0.2s; }
+.debit-transaction-item:nth-child(3) { animation-delay: 0.3s; }
+.debit-transaction-item:nth-child(4) { animation-delay: 0.4s; }
+.debit-transaction-item:nth-child(5) { animation-delay: 0.5s; }
+.debit-transaction-item:nth-child(6) { animation-delay: 0.6s; }
+.debit-transaction-item:nth-child(7) { animation-delay: 0.7s; }
+.debit-transaction-item:nth-child(8) { animation-delay: 0.8s; }
+.debit-transaction-item:nth-child(9) { animation-delay: 0.9s; }
+
 /* Bottom Navigation */
 .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #1a1a1a; display: flex; justify-content: center; padding: 10px 0; border-top: 1px solid #333; z-index: 1000; }
 .bottom-nav-inner { display: flex; justify-content: space-around; width: 100%; max-width: 480px; margin: 0 auto; }
@@ -164,34 +466,122 @@ body {
 .page-content { display: none; }
 .page-content.active { display: block; }
 
-/* --- Responsive Styles --- */
-/* Full Width Desktop Layout with Large Elements */
+/* Small phone screens */
+@media (max-width: 360px) {
+    .debit-balance-amount {
+        font-size: 20px;
+    }
 
-@media (min-width: 768px) { /* Tablet / Small Desktop */
+    .debit-action-button {
+        min-width: 80px;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .debit-transaction-header h3 {
+        font-size: 14px;
+    }
+
+    .debit-total-amount {
+        font-size: 13px;
+    }
+    
+    .debit-transaction-amount {
+        font-size: 13px;
+    }
+}
+
+/* --- Responsive Styles --- */
+/* Tablet / Small Desktop */
+@media (min-width: 600px) { 
     .container {
-        max-width: none; /* Full Width Container */
+        max-width: none;
         padding-left: 30px;
         padding-right: 30px;
     }
+    
+    /* Debit card specific adjustments for tablet */
+    .debit-card-header {
+        padding: 20px;
+    }
+
+    .debit-card-back-arrow {
+        font-size: 24px;
+        left: 20px;
+    }
+
+    .debit-card-page-title {
+        font-size: 18px;
+    }
+
+    .debit-card-section {
+        padding: 30px 20px;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .debit-user-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .debit-user-name {
+        font-size: 16px;
+    }
+
+    .debit-pro-badge {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .debit-balance-label {
+        font-size: 14px;
+    }
+
+    .debit-balance-amount {
+        font-size: 32px;
+    }
+
+    .debit-action-button {
+        padding: 18px;
+        font-size: 16px;
+    }
+
+    .debit-transaction-section {
+        padding: 20px;
+    }
+
+    .debit-transaction-item {
+        padding: 15px;
+    }
+
+    .debit-transaction-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    /* Other existing tablet styles */
     .bottom-nav-inner {
-        max-width: none; /* Full Width Nav Items */
+        max-width: none;
         padding: 0 20px;
     }
 
     .hero, .features, .tabs, .table, .profile-section, .assets-card, .currency-assets, .menu-list, .form-page {
-        max-width: none; /* Allow full width */
+        max-width: none;
         margin-left: 0;
         margin-right: 0;
-        padding-left: 5%; /* Add padding inside content blocks */
+        padding-left: 5%;
         padding-right: 5%;
     }
+    
     .tabs { padding-left: 0; padding-right: 0;}
     .table { padding-left: 0; padding-right: 0;}
 
-    /* Hero section desktop adjustments */
-     .hero { align-items: center; }
-     .hero-text { font-size: 28px; }
-     .hero-image { width: 150px; } /* Adjusted size */
+    .hero { align-items: center; }
+    .hero-text { font-size: 28px; }
+    .hero-image { width: 150px; }
 
     .features { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
     .limits-container { flex-direction: row; }
@@ -200,61 +590,72 @@ body {
     .table-header, .table-row { font-size: 17px; }
     .price-info { font-size: 17px; }
 
-    /* Large form elements */
     .form-page { max-width: 95%; }
     .form-page h2 { font-size: 26px; margin-bottom: 30px; }
     .form-section label { font-size: 17px; margin-bottom: 12px;}
     .form-section input, .form-section select { padding: 16px; font-size: 19px; }
-    .balance-info { font-size: 17px; }
-    .verification-code-section input { font-size: 19px; }
-    .captcha-image-placeholder { width: 130px; height: 50px; font-size: 24px; }
-    .info-text { font-size: 15px; }
-    .submit-button, .back-button { padding: 18px; font-size: 19px; max-width: 450px; margin-left: auto; margin-right: auto; }
-    #withdraw-page .currency-display-section { padding: 25px; margin-bottom: 25px;}
-    #withdraw-page .currency-display-logo { width: 55px; height: 55px; font-size: 26px; margin-right: 18px;}
-    #withdraw-page .currency-display-name { font-size: 20px; }
-    #withdraw-page .currency-display-network { font-size: 17px; }
-
-    /* Larger Error Message */
-    .error-display { font-size: 16px; padding: 20px; }
-     .error-display strong { font-size: 1.15em; margin-bottom: 10px;}
 }
 
-@media (min-width: 1024px) { /* Desktop */
-     .container {
-         padding-left: 50px;
-         padding-right: 50px;
-     }
-     .hero, .features, .tabs, .table, .profile-section, .assets-card, .currency-assets, .menu-list, .form-page {
-         padding-left: 10%;
-         padding-right: 10%;
-     }
-     .tabs { padding-left: 0; padding-right: 0;}
-     .table { padding-left: 0; padding-right: 0;}
-     #assets-page .features { max-width: 700px; margin-left: auto; margin-right: auto;}
+/* Desktop */
+@media (min-width: 1024px) { 
+    .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    /* Debit card specific adjustments for desktop */
+    .debit-card-section {
+        padding: 40px 30px;
+        margin: 30px;
+    }
+
+    .debit-balance-amount {
+        font-size: 36px;
+    }
+
+    .debit-actions {
+        gap: 15px;
+    }
+
+    .debit-transaction-list {
+        max-height: 450px;
+    }
+    
+    /* Other existing desktop styles */
+    .hero, .features, .tabs, .table, .profile-section, .assets-card, .currency-assets, .menu-list, .form-page {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    .tabs { padding-left: 0; padding-right: 0;}
+    .table { padding-left: 0; padding-right: 0;}
+    #assets-page .features { max-width: 700px; margin-left: auto; margin-right: auto;}
 
     .hero-text { font-size: 34px; }
-    .hero-image { width: 170px; } /* Adjusted size */
+    .hero-image { width: 170px; }
 
     .currency-assets { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
     .currency-item { border-bottom: 1px solid #333; }
 
-     /* Even larger form elements */
-     .form-page h2 { font-size: 28px; margin-bottom: 35px;}
-     .form-section label { font-size: 18px;}
-     .form-section input, .form-section select { padding: 18px; font-size: 20px; }
-     .balance-info { font-size: 18px; }
-     .verification-code-section input { font-size: 20px; }
-     .captcha-image-placeholder { width: 140px; height: 55px; font-size: 26px; }
-     .info-text { font-size: 16px; }
-     .submit-button, .back-button { padding: 22px; font-size: 20px; margin-top: 30px; max-width: 500px;}
-     .back-button { margin-top: 18px; }
-     #withdraw-page .currency-display-section { padding: 30px; margin-bottom: 30px;}
-     #withdraw-page .currency-display-logo { width: 60px; height: 60px; font-size: 28px; margin-right: 20px;}
-     #withdraw-page .currency-display-name { font-size: 24px; }
-     #withdraw-page .currency-display-network { font-size: 19px; }
+    .form-page h2 { font-size: 28px; margin-bottom: 35px;}
+    .form-section label { font-size: 18px;}
+    .form-section input, .form-section select { padding: 18px; font-size: 20px; }
+}
 
-     /* Even Larger Error Message */
-     .error-display { font-size: 18px; padding: 25px; }
-      .error-display strong { font-size: 1.2em; margin-bottom: 12px;}
+/* iOS Safari fixes */
+@supports (-webkit-touch-callout: none) {
+    .debit-action-button {
+        -webkit-appearance: none;
+    }
+}
+
+/* Touch optimizations for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .debit-action-button:active {
+        opacity: 0.7;
+    }
+    
+    .debit-transaction-item:active {
+        background-color: #2a2a2a;
+    }
 }
