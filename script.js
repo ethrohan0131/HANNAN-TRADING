@@ -109,3 +109,31 @@ if (vipTransferForm) { vipTransferForm.addEventListener('submit', function(e) { 
 
 const captchaPlaceholder = document.querySelector('.captcha-image-placeholder');
 if (captchaPlaceholder) { captchaPlaceholder.addEventListener('click', () => { alert('Refresh CAPTCHA (placeholder)'); }); }
+
+// Debit Card Page functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Back button for debit card page
+    const debitBackButton = document.querySelector('.debit-card-back-arrow');
+    if (debitBackButton) {
+        debitBackButton.addEventListener('click', function() {
+            showPage('assets-page');
+        });
+    }
+
+    // Action buttons
+    document.querySelectorAll('.debit-action-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.textContent.toLowerCase();
+            console.log(`${action} clicked`);
+            
+            // Add functionality based on button clicked
+            if (action === 'recharger') {
+                showPage('recharge-page');
+            } else if (action === 'withdraw') {
+                showPage('withdraw-page');
+            } else if (action === 'transfer') {
+                showPage('vip-transfer-page');
+            }
+        });
+    });
+});
