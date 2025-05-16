@@ -1281,9 +1281,383 @@
               </form>
               <button class="back-button" data-page="assets-page">Back</button>
         </div>
-        <div id="recharge-page" class="page-content form-page"><h2>Recharge</h2><p>Recharge functionality here.</p><button class="back-button" data-page="home-page">Back</button></div>
+<!-- Recharge Page -->
+<div id="recharge-page" class="page-content form-page">
+    <div class="recharge-header">
+        <h2>Recharge</h2>
+        <p class="recharge-subtitle">Add funds to your account</p>
+    </div>
+    
+    <div class="recharge-tabs">
+        <button class="recharge-tab active" data-tab="crypto">Crypto</button>
+        <button class="recharge-tab" data-tab="bank">Bank Transfer</button>
+        <button class="recharge-tab" data-tab="card">Credit Card</button>
+    </div>
+    
+    <!-- Crypto Deposit Tab -->
+    <div class="recharge-content active" id="crypto-tab">
+        <div class="currency-selector">
+            <label for="crypto-currency">Select Currency</label>
+            <div class="select-wrapper">
+                <select id="crypto-currency" class="currency-select">
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT" selected>Tether (USDT)</option>
+                    <option value="BNB">Binance Coin (BNB)</option>
+                    <option value="SOL">Solana (SOL)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="network-selector">
+            <label for="crypto-network">Select Network</label>
+            <div class="select-wrapper">
+                <select id="crypto-network" class="network-select">
+                    <option value="TRC20" selected>TRC20</option>
+                    <option value="ERC20">ERC20</option>
+                    <option value="BEP20">BEP20 (BSC)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="wallet-address-section">
+            <label>Deposit Address</label>
+            <div class="wallet-address-display">
+                <div class="wallet-address">TUV3Su5iRbcyQpB4nYrpjNxTGnG57C5xVp</div>
+                <button class="copy-address-btn">📋 Copy</button>
+            </div>
+            
+            <div class="address-qr-container">
+                <div class="qr-code">
+                    <svg viewBox="0 0 200 200" style="width: 100%; height: auto;" class="qr-svg">
+                        <rect x="0" y="0" width="200" height="200" fill="#fff"/>
+                        <!-- QR Code Pattern - simplified representation -->
+                        <rect x="20" y="20" width="160" height="160" fill="#000"/>
+                        <rect x="30" y="30" width="140" height="140" fill="#fff"/>
+                        <rect x="40" y="40" width="120" height="120" fill="#000"/>
+                        <!-- QR Code pattern elements -->
+                        <rect x="50" y="50" width="20" height="20" fill="#fff"/>
+                        <rect x="80" y="50" width="20" height="20" fill="#fff"/>
+                        <rect x="110" y="50" width="20" height="20" fill="#fff"/>
+                        <rect x="50" y="80" width="20" height="20" fill="#fff"/>
+                        <rect x="110" y="80" width="20" height="20" fill="#fff"/>
+                        <rect x="50" y="110" width="20" height="20" fill="#fff"/>
+                        <rect x="80" y="110" width="20" height="20" fill="#fff"/>
+                        <rect x="110" y="110" width="20" height="20" fill="#fff"/>
+                        <!-- Center USDT Logo -->
+                        <circle cx="100" cy="100" r="15" fill="#26a17b"/>
+                        <text x="100" y="105" font-size="18" font-weight="bold" fill="white" text-anchor="middle">₮</text>
+                    </svg>
+                </div>
+                <div class="qr-instructions">Scan QR code to copy address</div>
+            </div>
+        </div>
+        
+        <div class="deposit-instructions">
+            <div class="instruction-header">
+                <div class="instruction-icon">ℹ️</div>
+                <div class="instruction-title">Important Instructions</div>
+            </div>
+            <ul class="instruction-list">
+                <li>Send only <span class="highlight">USDT</span> to this deposit address</li>
+                <li>Ensure you've selected the correct network (<span class="highlight">TRC20</span>)</li>
+                <li>Minimum deposit: <span class="highlight">10 USDT</span></li>
+                <li>Deposits typically reflect in 10-30 minutes</li>
+                <li>Contact support if funds don't arrive within 24 hours</li>
+            </ul>
+        </div>
+        
+        <div class="recent-deposits">
+            <h3>Recent Deposits</h3>
+            <div class="deposit-list">
+                <div class="deposit-item">
+                    <div class="deposit-info">
+                        <div class="deposit-amount">+ 250.00 USDT</div>
+                        <div class="deposit-date">May 15, 2025 - 12:34 PM</div>
+                    </div>
+                    <div class="deposit-status completed">Completed</div>
+                </div>
+                <div class="deposit-item">
+                    <div class="deposit-info">
+                        <div class="deposit-amount">+ 1,000.00 USDT</div>
+                        <div class="deposit-date">May 10, 2025 - 3:21 PM</div>
+                    </div>
+                    <div class="deposit-status completed">Completed</div>
+                </div>
+                <div class="deposit-item">
+                    <div class="deposit-info">
+                        <div class="deposit-amount">+ 500.00 USDT</div>
+                        <div class="deposit-date">May 5, 2025 - 9:46 AM</div>
+                    </div>
+                    <div class="deposit-status completed">Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bank Transfer Tab -->
+    <div class="recharge-content" id="bank-tab">
+        <div class="bank-transfer-info">
+            <div class="bank-notice">
+                <div class="notice-icon">🏦</div>
+                <div class="notice-text">Bank transfer deposits are processed within 1-3 business days</div>
+            </div>
+            
+            <div class="bank-details-section">
+                <h3>Bank Account Details</h3>
+                
+                <div class="bank-detail-item">
+                    <div class="detail-label">Bank Name</div>
+                    <div class="detail-value">Global Financial Bank</div>
+                </div>
+                
+                <div class="bank-detail-item">
+                    <div class="detail-label">Account Name</div>
+                    <div class="detail-value">Crypto Trading Platform Ltd.</div>
+                </div>
+                
+                <div class="bank-detail-item">
+                    <div class="detail-label">Account Number</div>
+                    <div class="detail-value-copy">
+                        <span class="detail-value">8371937201947</span>
+                        <button class="copy-btn">📋</button>
+                    </div>
+                </div>
+                
+                <div class="bank-detail-item">
+                    <div class="detail-label">SWIFT/BIC</div>
+                    <div class="detail-value-copy">
+                        <span class="detail-value">GFBLUSDXXX</span>
+                        <button class="copy-btn">📋</button>
+                    </div>
+                </div>
+                
+                <div class="bank-detail-item">
+                    <div class="detail-label">Reference</div>
+                    <div class="detail-value-copy">
+                        <span class="detail-value">3920571-ETH-ROHAN</span>
+                        <button class="copy-btn">📋</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bank-transfer-notice">
+                <strong>IMPORTANT:</strong> You must include the reference code in your transfer description to ensure your deposit is credited to your account.
+            </div>
+        </div>
+        
+        <div class="notify-transfer-section">
+            <h3>Notify Us of Your Transfer</h3>
+            <p class="notify-desc">After making your bank transfer, complete this form to speed up the deposit process.</p>
+            
+            <form class="notify-form">
+                <div class="form-group">
+                    <label for="transfer-amount">Transfer Amount</label>
+                    <input type="number" id="transfer-amount" placeholder="Enter amount" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transfer-date">Transfer Date</label>
+                    <input type="date" id="transfer-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bank-name">Your Bank Name</label>
+                    <input type="text" id="bank-name" placeholder="Enter your bank name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transfer-proof">Transfer Receipt (Optional)</label>
+                    <div class="file-upload">
+                        <button type="button" class="upload-btn">Choose File</button>
+                        <span class="file-name">No file chosen</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="notify-submit">Submit Transfer Information</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Credit Card Tab -->
+    <div class="recharge-content" id="card-tab">
+        <div class="card-info-notice">
+            <div class="card-notice-icon">💳</div>
+            <div class="card-notice-text">Instantly add funds using your credit or debit card</div>
+        </div>
+        
+        <form class="card-payment-form">
+            <div class="amount-selector">
+                <label for="card-amount">Select Amount</label>
+                <input type="number" id="card-amount" placeholder="Enter amount (USD)" required>
+                <div class="amount-buttons">
+                    <button type="button" class="amount-btn" data-amount="100">$100</button>
+                    <button type="button" class="amount-btn" data-amount="500">$500</button>
+                    <button type="button" class="amount-btn" data-amount="1000">$1000</button>
+                    <button type="button" class="amount-btn" data-amount="5000">$5000</button>
+                </div>
+            </div>
+            
+            <div class="card-details">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <div class="card-number-input">
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        <div class="card-icons">
+                            <span class="card-icon">💳</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-info-row">
+                    <div class="form-group expiry-group">
+                        <label for="card-expiry">Expiry Date</label>
+                        <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    
+                    <div class="form-group cvv-group">
+                        <label for="card-cvv">CVV</label>
+                        <input type="text" id="card-cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="card-name">Cardholder Name</label>
+                    <input type="text" id="card-name" placeholder="John Smith" required>
+                </div>
+            </div>
+            
+            <div class="payment-summary">
+                <div class="summary-row">
+                    <div class="summary-label">Amount</div>
+                    <div class="summary-value" id="summary-amount">$0.00</div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-label">Fee (3%)</div>
+                    <div class="summary-value" id="summary-fee">$0.00</div>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row total">
+                    <div class="summary-label">Total</div>
+                    <div class="summary-value" id="summary-total">$0.00</div>
+                </div>
+            </div>
+            
+            <div class="card-agreement">
+                <label class="agreement-checkbox">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    <span class="agreement-text">I agree to the <a href="#">Terms of Service</a> and authorize the charge to my card</span>
+                </label>
+            </div>
+            
+            <button type="submit" class="payment-submit">Proceed to Payment</button>
+        </form>
+        
+        <div class="card-security-notice">
+            <div class="security-icon">🔒</div>
+            <div class="security-text">Your payment information is secure and encrypted. We do not store your card details.</div>
+        </div>
+    </div>
+    
+    <button class="back-button" data-page="assets-page">Back</button>
+</div>
          <div id="transfer-page" class="page-content form-page"><h2>Transfer</h2><p>Regular transfer functionality here.</p><button class="back-button" data-page="home-page">Back</button></div>
-         <div id="vip-level-page" class="page-content"><h2>VIP Level</h2><p>Details about VIP levels.</p><button class="back-button" data-page="home-page">Back</button></div>
+        <!-- VIP Level Page HTML -->
+<div id="vip-level-page" class="page-content">
+    <div class="vip-level-header">
+        <h2>VIP Level Program</h2>
+        <p class="vip-subtitle">Unlock exclusive benefits and rewards</p>
+    </div>
+
+    <div class="vip-levels-container">
+        <div class="vip-level-card" data-level="1">
+            <div class="vip-level-icon">🥉</div>
+            <h3>VIP Level 1</h3>
+            <div class="vip-level-benefits">
+                <div class="benefit-item">Daily Withdrawal Limit: $10,000</div>
+                <div class="benefit-item">Basic Trading Fees</div>
+                <div class="benefit-item">Standard Customer Support</div>
+            </div>
+            <div class="vip-progress">
+                <div class="progress-bar" style="width: 20%;"></div>
+                <span class="progress-text">Next Level: $50,000 Total Volume</span>
+            </div>
+        </div>
+
+        <div class="vip-level-card" data-level="2">
+            <div class="vip-level-icon">🥈</div>
+            <h3>VIP Level 2</h3>
+            <div class="vip-level-benefits">
+                <div class="benefit-item">Daily Withdrawal Limit: $50,000</div>
+                <div class="benefit-item">Reduced Trading Fees</div>
+                <div class="benefit-item">Priority Customer Support</div>
+                <div class="benefit-item">Exclusive Market Insights</div>
+            </div>
+            <div class="vip-progress">
+                <div class="progress-bar" style="width: 50%;"></div>
+                <span class="progress-text">Next Level: $250,000 Total Volume</span>
+            </div>
+        </div>
+
+        <div class="vip-level-card" data-level="3">
+            <div class="vip-level-icon">🥇</div>
+            <h3>VIP Level 3</h3>
+            <div class="vip-level-benefits">
+                <div class="benefit-item">Daily Withdrawal Limit: $250,000</div>
+                <div class="benefit-item">Lowest Trading Fees</div>
+                <div class="benefit-item">Dedicated Account Manager</div>
+                <div class="benefit-item">Premium Market Analysis</div>
+                <div class="benefit-item">Exclusive Events Access</div>
+            </div>
+            <div class="vip-progress">
+                <div class="progress-bar" style="width: 80%;"></div>
+                <span class="progress-text">Next Level: $1,000,000 Total Volume</span>
+            </div>
+        </div>
+
+        <div class="vip-level-card" data-level="4">
+            <div class="vip-level-icon">💎</div>
+            <h3>VIP Elite Level</h3>
+            <div class="vip-level-benefits">
+                <div class="benefit-item">Unlimited Daily Withdrawal</div>
+                <div class="benefit-item">Zero Trading Fees</div>
+                <div class="benefit-item">Personal Wealth Advisor</div>
+                <div class="benefit-item">Exclusive Investment Opportunities</div>
+                <div class="benefit-item">Global Concierge Service</div>
+            </div>
+            <div class="vip-progress full-progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+                <span class="progress-text">Top Tier Achieved</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="vip-details-section">
+        <h3>How to Upgrade Your VIP Level</h3>
+        <div class="upgrade-steps">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-description">Increase Total Trading Volume</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-description">Maintain Account Activity</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-description">Complete Account Verification</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vip-bottom-section">
+        <button class="upgrade-btn">Upgrade VIP Level</button>
+        <p class="vip-disclaimer">VIP level benefits are subject to change. Contact support for latest details.</p>
+    </div>
+
+    <button class="back-button" data-page="home-page">Back</button>
+</div>
          
          <!-- NEW WALLET PAGE WITH DEBIT CARD -->
          <div id="wallet-page" class="page-content">
@@ -1562,7 +1936,101 @@
             <button class="back-button" data-page="home-page">Back</button>
          </div>
          
-         <div id="buy-coins-page" class="page-content form-page"><h2>Buy Coins</h2><p>Interface to buy coins.</p><button class="back-button" data-page="home-page">Back</button></div>
+         <div id="buy-coins-page" class="page-content form-page"><!-- Buy Coins Page -->
+<div id="buy-coins-page" class="page-content">
+    <div class="buy-coins-header">
+        <h2>Buy Coins</h2>
+        <p>Purchase cryptocurrency easily and securely</p>
+    </div>
+
+    <div class="payment-methods">
+        <h3>Select Payment Method</h3>
+        
+        <div class="payment-method" data-method="crypto">
+            <div class="payment-icon crypto-icon">₿</div>
+            <div class="payment-info">
+                <div class="payment-title">Cryptocurrency Transfer</div>
+                <div class="payment-desc">Transfer from another crypto wallet</div>
+            </div>
+        </div>
+        
+        <div class="payment-method" data-method="bank">
+            <div class="payment-icon bank-icon">🏦</div>
+            <div class="payment-info">
+                <div class="payment-title">Bank Transfer</div>
+                <div class="payment-desc">Direct transfer from your bank account</div>
+            </div>
+        </div>
+        
+        <div class="payment-method" data-method="card">
+            <div class="payment-icon card-icon">💳</div>
+            <div class="payment-info">
+                <div class="payment-title">Credit/Debit Card</div>
+                <div class="payment-desc">Quick payment using card</div>
+            </div>
+        </div>
+        
+        <div class="payment-method" data-method="wallet">
+            <div class="payment-icon wallet-icon">👛</div>
+            <div class="payment-info">
+                <div class="payment-title">Digital Wallet</div>
+                <div class="payment-desc">Pay via digital payment platforms</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buy-form">
+        <h2 class="form-title">Purchase Cryptocurrency</h2>
+        
+        <div class="currency-tabs">
+            <div class="currency-tab active" data-currency="BTC">Bitcoin</div>
+            <div class="currency-tab" data-currency="ETH">Ethereum</div>
+            <div class="currency-tab" data-currency="USDT">Tether</div>
+            <div class="currency-tab" data-currency="BNB">Binance Coin</div>
+        </div>
+
+        <div class="form-group">
+            <label>Enter Amount (USD)</label>
+            <input type="number" class="form-control" placeholder="Enter amount" min="10" step="1">
+        </div>
+
+        <div class="amount-presets">
+            <div class="amount-preset">$100</div>
+            <div class="amount-preset">$500</div>
+            <div class="amount-preset">$1,000</div>
+            <div class="amount-preset">$5,000</div>
+        </div>
+
+        <div class="total-section">
+            <div class="total-label">Total Coins</div>
+            <div class="total-amount">0.00 BTC</div>
+        </div>
+
+        <button class="submit-button">Proceed to Payment</button>
+    </div>
+
+    <div class="payment-info-section">
+        <div class="info-title">Transaction Details</div>
+        <div class="info-item">
+            <span class="info-label">Coin Price</span>
+            <span class="info-value">$65,421.50</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Network Fee</span>
+            <span class="info-value">$4.99</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Total Service Fee</span>
+            <span class="info-value">3%</span>
+        </div>
+    </div>
+
+    <div class="security-notice">
+        Your transaction is secure and encrypted. We do not store your payment details.
+    </div>
+
+    <button class="back-button" data-page="assets-page">Back</button>
+</div></div>
          <div id="market-page" class="page-content market-page">
             <div class="market-header">
                 <h2>Market</h2>
@@ -1992,9 +2460,942 @@
             
             <button class="back-button" data-page="home-page">Back</button>
          </div>
-         <div id="account-management-page" class="page-content"><h2>Account Management</h2><p>Account settings.</p><button class="back-button" data-page="assets-page">Back</button></div>
-         <div id="financial-records-page" class="page-content"><h2>Financial Records</h2><p>Transaction history.</p><button class="back-button" data-page="assets-page">Back</button></div>
-         <div id="language-settings-page" class="page-content"><h2>Language Settings</h2><p>Language options.</p><button class="back-button" data-page="assets-page">Back</button></div>
+        <!-- Account Management Page -->
+<div id="account-management-page" class="page-content">
+    <div class="account-header">
+        <h2>Account Management</h2>
+        <p class="account-subtitle">Account settings.</p>
+    </div>
+    
+    <div class="account-sections">
+        <!-- Profile Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">👤</div>
+                <h3>Profile Information</h3>
+            </div>
+            <div class="profile-edit-container">
+                <div class="profile-avatar">
+                    <div class="avatar-circle">PIC</div>
+                    <button class="change-avatar-btn">Change</button>
+                </div>
+                <div class="profile-fields">
+                    <div class="profile-field">
+                        <label for="username">Username</label>
+                        <div class="field-with-button">
+                            <input type="text" id="username" value="econsoleneo" readonly>
+                            <button class="edit-btn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="profile-field">
+                        <label for="email">Email</label>
+                        <div class="field-with-button">
+                            <input type="email" id="email" value="cons*******@gmail.com" readonly>
+                            <button class="edit-btn">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Security Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">🔒</div>
+                <h3>Security Settings</h3>
+            </div>
+            <div class="security-options">
+                <div class="security-option">
+                    <div class="option-info">
+                        <div class="option-name">Login Password</div>
+                        <div class="option-desc">Used for account login</div>
+                    </div>
+                    <button class="change-btn">Change</button>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <div class="option-name">Fund Password</div>
+                        <div class="option-desc">Used for all transactions</div>
+                    </div>
+                    <button class="change-btn">Change</button>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <div class="option-name">2FA Authentication</div>
+                        <div class="option-desc">Additional security layer</div>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <div class="option-name">Biometric Authentication</div>
+                        <div class="option-desc">Login using fingerprint/face</div>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Verification Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">✅</div>
+                <h3>Identity Verification</h3>
+            </div>
+            <div class="verification-status">
+                <div class="verification-level">
+                    <div class="level-info">
+                        <div class="level-name">Level 1 <span class="verified-badge">Verified</span></div>
+                        <div class="level-desc">Email verification</div>
+                    </div>
+                    <div class="level-check">✓</div>
+                </div>
+                <div class="verification-level">
+                    <div class="level-info">
+                        <div class="level-name">Level 2 <span class="verified-badge">Verified</span></div>
+                        <div class="level-desc">Phone verification</div>
+                    </div>
+                    <div class="level-check">✓</div>
+                </div>
+                <div class="verification-level">
+                    <div class="level-info">
+                        <div class="level-name">Level 3 <span class="verified-badge">Verified</span></div>
+                        <div class="level-desc">ID verification</div>
+                    </div>
+                    <div class="level-check">✓</div>
+                </div>
+                <div class="verification-level">
+                    <div class="level-info">
+                        <div class="level-name">Level 4</div>
+                        <div class="level-desc">Advanced verification for higher limits</div>
+                    </div>
+                    <button class="verify-now-btn">Verify Now</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Preferences Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">⚙️</div>
+                <h3>Preferences</h3>
+            </div>
+            <div class="preference-options">
+                <div class="preference-option">
+                    <div class="option-info">
+                        <div class="option-name">Notification Settings</div>
+                        <div class="option-desc">Manage your alert preferences</div>
+                    </div>
+                    <button class="option-btn">Manage</button>
+                </div>
+                <div class="preference-option">
+                    <div class="option-info">
+                        <div class="option-name">Language</div>
+                        <div class="option-desc">Current: English</div>
+                    </div>
+                    <button class="option-btn">Change</button>
+                </div>
+                <div class="preference-option">
+                    <div class="option-info">
+                        <div class="option-name">Currency Display</div>
+                        <div class="option-desc">Current: USD</div>
+                    </div>
+                    <button class="option-btn">Change</button>
+                </div>
+                <div class="preference-option">
+                    <div class="option-info">
+                        <div class="option-name">Time Zone</div>
+                        <div class="option-desc">Current: UTC+06:00 Dhaka</div>
+                    </div>
+                    <button class="option-btn">Change</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Linked Accounts Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">🔗</div>
+                <h3>Linked Accounts</h3>
+            </div>
+            <div class="linked-accounts">
+                <div class="linked-account">
+                    <div class="account-info">
+                        <div class="account-platform">
+                            <div class="platform-icon">📱</div>
+                            <div class="platform-name">Mobile App</div>
+                        </div>
+                        <div class="account-status connected">Connected</div>
+                    </div>
+                    <button class="disconnect-btn">Disconnect</button>
+                </div>
+                <div class="linked-account">
+                    <div class="account-info">
+                        <div class="account-platform">
+                            <div class="platform-icon">🌐</div>
+                            <div class="platform-name">Google</div>
+                        </div>
+                        <div class="account-status">Not Connected</div>
+                    </div>
+                    <button class="connect-btn">Connect</button>
+                </div>
+                <div class="linked-account">
+                    <div class="account-info">
+                        <div class="account-platform">
+                            <div class="platform-icon">📘</div>
+                            <div class="platform-name">Facebook</div>
+                        </div>
+                        <div class="account-status">Not Connected</div>
+                    </div>
+                    <button class="connect-btn">Connect</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Account Activity Section -->
+        <div class="account-section">
+            <div class="section-header">
+                <div class="section-icon">📊</div>
+                <h3>Account Activity</h3>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon login">🔑</div>
+                    <div class="activity-details">
+                        <div class="activity-type">Login</div>
+                        <div class="activity-info">From 103.xx.xx.xx (Chrome)</div>
+                        <div class="activity-time">May 15, 2025 - 10:22 AM</div>
+                    </div>
+                    <div class="activity-status">🟢</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon transfer">💸</div>
+                    <div class="activity-details">
+                        <div class="activity-type">VIP Transfer</div>
+                        <div class="activity-info">To wallet0x254...83cf</div>
+                        <div class="activity-time">May 14, 2025 - 3:18 PM</div>
+                    </div>
+                    <div class="activity-status">🟢</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon settings">⚙️</div>
+                    <div class="activity-details">
+                        <div class="activity-type">Settings Changed</div>
+                        <div class="activity-info">Password updated</div>
+                        <div class="activity-time">May 11, 2025 - 5:45 PM</div>
+                    </div>
+                    <div class="activity-status">🟢</div>
+                </div>
+            </div>
+            <button class="view-all-btn">View All Activity</button>
+        </div>
+        
+        <!-- Danger Zone Section -->
+        <div class="account-section danger-zone">
+            <div class="section-header">
+                <div class="section-icon">⚠️</div>
+                <h3>Account Controls</h3>
+            </div>
+            <div class="danger-options">
+                <div class="danger-option">
+                    <div class="option-info">
+                        <div class="option-name">Freeze Account</div>
+                        <div class="option-desc">Temporarily disable all account activity</div>
+                    </div>
+                    <button class="freeze-btn">Freeze</button>
+                </div>
+                <div class="danger-option">
+                    <div class="option-info">
+                        <div class="option-name">Close Account</div>
+                        <div class="option-desc">Permanently delete your account</div>
+                    </div>
+                    <button class="close-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="back-button" data-page="assets-page">Back</button>
+</div>
+       <!-- Financial Records Page -->
+<div id="financial-records-page" class="page-content">
+    <div class="financial-records-header">
+        <h2>Financial Records</h2>
+        <p class="financial-records-subtitle">Transaction history</p>
+    </div>
+    
+    <!-- Filters Section -->
+    <div class="records-filters">
+        <div class="filter-options">
+            <div class="filter-group">
+                <label for="transaction-type">Transaction Type</label>
+                <div class="select-wrapper">
+                    <select id="transaction-type" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="deposit">Deposit</option>
+                        <option value="withdrawal">Withdrawal</option>
+                        <option value="transfer">Transfer</option>
+                        <option value="vip-transfer">VIP Transfer</option>
+                        <option value="trading">Trading</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label for="transaction-status">Status</label>
+                <div class="select-wrapper">
+                    <select id="transaction-status" class="filter-select">
+                        <option value="all">All Status</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label for="transaction-currency">Currency</label>
+                <div class="select-wrapper">
+                    <select id="transaction-currency" class="filter-select">
+                        <option value="all">All Currencies</option>
+                        <option value="USDT">USDT</option>
+                        <option value="BTC">BTC</option>
+                        <option value="ETH">ETH</option>
+                        <option value="BNB">BNB</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="date-filters">
+            <div class="filter-group">
+                <label for="date-from">From</label>
+                <input type="date" id="date-from" class="date-input">
+            </div>
+            
+            <div class="filter-group">
+                <label for="date-to">To</label>
+                <input type="date" id="date-to" class="date-input">
+            </div>
+            
+            <button class="filter-apply-btn">Apply Filters</button>
+        </div>
+        
+        <div class="search-export">
+            <div class="search-container">
+                <input type="text" placeholder="Search transactions..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            
+            <button class="export-btn">Export <span class="export-icon">📥</span></button>
+        </div>
+    </div>
+    
+    <!-- Summary Cards -->
+    <div class="transaction-summary">
+        <div class="summary-card">
+            <div class="summary-card-icon deposit">⬇️</div>
+            <div class="summary-card-info">
+                <div class="summary-card-title">Total Deposits</div>
+                <div class="summary-card-amount">$1,152,075.73</div>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-card-icon withdrawal">⬆️</div>
+            <div class="summary-card-info">
+                <div class="summary-card-title">Total Withdrawals</div>
+                <div class="summary-card-amount">$245,890.50</div>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-card-icon transfer">↔️</div>
+            <div class="summary-card-info">
+                <div class="summary-card-title">Total Transfers</div>
+                <div class="summary-card-amount">$564,320.75</div>
+            </div>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-card-icon balance">💰</div>
+            <div class="summary-card-info">
+                <div class="summary-card-title">Net Balance Change</div>
+                <div class="summary-card-amount positive">+$341,864.48</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Transactions Table -->
+    <div class="transactions-container">
+        <div class="transactions-header">
+            <h3>Transactions</h3>
+            <div class="transaction-count">Showing <span id="shown-transactions">10</span> of <span id="total-transactions">152</span> transactions</div>
+        </div>
+        
+        <div class="transactions-table-container">
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transaction rows will be dynamically populated -->
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 15, 2025 - 12:34 PM</td>
+                        <td class="transaction-type deposit">Deposit</td>
+                        <td class="transaction-description">USDT Deposit via TRC20</td>
+                        <td class="transaction-amount positive">+250,450.50 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123456">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 14, 2025 - 3:18 PM</td>
+                        <td class="transaction-type vip-transfer">VIP Transfer</td>
+                        <td class="transaction-description">To wallet0x254...83cf</td>
+                        <td class="transaction-amount negative">-125,350.00 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123457">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 12, 2025 - 10:45 AM</td>
+                        <td class="transaction-type deposit">Deposit</td>
+                        <td class="transaction-description">BTC Deposit via BTC Network</td>
+                        <td class="transaction-amount positive">+2.5 BTC</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123458">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 10, 2025 - 5:22 PM</td>
+                        <td class="transaction-type withdrawal">Withdrawal</td>
+                        <td class="transaction-description">ETH Withdrawal to External Wallet</td>
+                        <td class="transaction-amount negative">-15.75 ETH</td>
+                        <td class="transaction-status"><span class="status-badge pending">Pending</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123459">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 10, 2025 - 3:21 PM</td>
+                        <td class="transaction-type deposit">Deposit</td>
+                        <td class="transaction-description">USDT Deposit via Bank Transfer</td>
+                        <td class="transaction-amount positive">+185,920.75 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123460">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 08, 2025 - 1:12 PM</td>
+                        <td class="transaction-type trading">Trading</td>
+                        <td class="transaction-description">BTC/USDT Buy Order</td>
+                        <td class="transaction-amount negative">-32,540.50 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123461">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 08, 2025 - 11:38 AM</td>
+                        <td class="transaction-type transfer">Transfer</td>
+                        <td class="transaction-description">Internal Transfer to Savings Account</td>
+                        <td class="transaction-amount negative">-50,000.00 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123462">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 05, 2025 - 9:46 AM</td>
+                        <td class="transaction-type deposit">Deposit</td>
+                        <td class="transaction-description">USDT Deposit via TRC20</td>
+                        <td class="transaction-amount positive">+500,000.00 USDT</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123463">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 03, 2025 - 7:32 PM</td>
+                        <td class="transaction-type deposit">Deposit</td>
+                        <td class="transaction-description">ETH Deposit via ERC20</td>
+                        <td class="transaction-amount positive">+25.45 ETH</td>
+                        <td class="transaction-status"><span class="status-badge completed">Completed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123464">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction-date">May 01, 2025 - 4:15 PM</td>
+                        <td class="transaction-type withdrawal">Withdrawal</td>
+                        <td class="transaction-description">USDT Withdrawal via TRC20</td>
+                        <td class="transaction-amount negative">-75,000.00 USDT</td>
+                        <td class="transaction-status"><span class="status-badge failed">Failed</span></td>
+                        <td class="transaction-actions">
+                            <button class="view-details-btn" data-transaction-id="tx123465">Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="pagination-btn prev">Previous</button>
+            <div class="pagination-pages">
+                <button class="pagination-page active">1</button>
+                <button class="pagination-page">2</button>
+                <button class="pagination-page">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-page">15</button>
+            </div>
+            <button class="pagination-btn next">Next</button>
+        </div>
+    </div>
+    
+    <!-- Transaction Details Modal -->
+    <div id="transaction-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Transaction Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Transaction ID</div>
+                    <div class="detail-value">tx123456</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">Deposit</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Date & Time</div>
+                    <div class="detail-value">May 15, 2025 - 12:34 PM</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Amount</div>
+                    <div class="detail-value positive">+250,450.50 USDT</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Network</div>
+                    <div class="detail-value">TRC20</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">From Address</div>
+                    <div class="detail-value address">TRx5F3Zn2xrzU4d4z9KLrynGKBdHuYYpJa</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">To Address</div>
+                    <div class="detail-value address">TUV3Su5iRbcyQpB4nYrpjNxTGnG57C5xVp</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Transaction Hash</div>
+                    <div class="detail-value hash">0x7f3d5a6b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Status</div>
+                    <div class="detail-value"><span class="status-badge completed">Completed</span></div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Confirmations</div>
+                    <div class="detail-value">86/15</div>
+                </div>
+                <div class="transaction-detail-row">
+                    <div class="detail-label">Notes</div>
+                    <div class="detail-value">Deposit successfully credited to your account</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="view-blockchain-btn">View on Blockchain Explorer</a>
+                <button class="report-issue-btn">Report an Issue</button>
+            </div>
+        </div>
+    </div>
+    
+    <button class="back-button" data-page="assets-page">Back</button>
+</div>
+        <!-- Language Settings Page -->
+<div id="language-settings-page" class="page-content">
+    <div class="language-header">
+        <h2>Language Settings</h2>
+        <p class="language-subtitle">Language options.</p>
+    </div>
+    
+    <div class="language-container">
+        <!-- Current Language Section -->
+        <div class="current-language-section">
+            <div class="section-title">Current Language</div>
+            <div class="current-language-display">
+                <div class="language-flag">🇬🇧</div>
+                <div class="language-info">
+                    <div class="language-name">English</div>
+                    <div class="language-region">United Kingdom</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Language Selection Section -->
+        <div class="language-selection-section">
+            <div class="section-title">Select Language</div>
+            <div class="language-search">
+                <input type="text" placeholder="Search languages..." class="language-search-input">
+                <button class="language-search-btn">🔍</button>
+            </div>
+            
+            <div class="languages-list">
+                <!-- Popular Languages -->
+                <div class="language-group">
+                    <div class="group-title">Popular Languages</div>
+                    
+                    <div class="language-option selected">
+                        <div class="language-option-flag">🇬🇧</div>
+                        <div class="language-option-name">English</div>
+                        <div class="language-option-check">✓</div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇨🇳</div>
+                        <div class="language-option-name">Chinese (Simplified)</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇪🇸</div>
+                        <div class="language-option-name">Spanish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇫🇷</div>
+                        <div class="language-option-name">French</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇧🇩</div>
+                        <div class="language-option-name">Bengali</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                </div>
+                
+                <!-- All Languages -->
+                <div class="language-group">
+                    <div class="group-title">All Languages</div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇦🇪</div>
+                        <div class="language-option-name">Arabic</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇧🇩</div>
+                        <div class="language-option-name">Bengali</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇨🇳</div>
+                        <div class="language-option-name">Chinese (Simplified)</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇹🇼</div>
+                        <div class="language-option-name">Chinese (Traditional)</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇨🇿</div>
+                        <div class="language-option-name">Czech</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇩🇰</div>
+                        <div class="language-option-name">Danish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇳🇱</div>
+                        <div class="language-option-name">Dutch</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option selected">
+                        <div class="language-option-flag">🇬🇧</div>
+                        <div class="language-option-name">English</div>
+                        <div class="language-option-check">✓</div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇫🇮</div>
+                        <div class="language-option-name">Finnish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇫🇷</div>
+                        <div class="language-option-name">French</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇩🇪</div>
+                        <div class="language-option-name">German</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇬🇷</div>
+                        <div class="language-option-name">Greek</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇮🇱</div>
+                        <div class="language-option-name">Hebrew</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇮🇳</div>
+                        <div class="language-option-name">Hindi</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇭🇺</div>
+                        <div class="language-option-name">Hungarian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇮🇩</div>
+                        <div class="language-option-name">Indonesian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇮🇹</div>
+                        <div class="language-option-name">Italian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇯🇵</div>
+                        <div class="language-option-name">Japanese</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇰🇷</div>
+                        <div class="language-option-name">Korean</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇲🇾</div>
+                        <div class="language-option-name">Malay</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇳🇴</div>
+                        <div class="language-option-name">Norwegian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇮🇷</div>
+                        <div class="language-option-name">Persian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇵🇱</div>
+                        <div class="language-option-name">Polish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇵🇹</div>
+                        <div class="language-option-name">Portuguese</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇷🇴</div>
+                        <div class="language-option-name">Romanian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇷🇺</div>
+                        <div class="language-option-name">Russian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇪🇸</div>
+                        <div class="language-option-name">Spanish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇸🇪</div>
+                        <div class="language-option-name">Swedish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇹🇭</div>
+                        <div class="language-option-name">Thai</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇹🇷</div>
+                        <div class="language-option-name">Turkish</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇺🇦</div>
+                        <div class="language-option-name">Ukrainian</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                    
+                    <div class="language-option">
+                        <div class="language-option-flag">🇻🇳</div>
+                        <div class="language-option-name">Vietnamese</div>
+                        <div class="language-option-check"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Regional Settings -->
+        <div class="regional-settings-section">
+            <div class="section-title">Regional Settings</div>
+            
+            <div class="setting-group">
+                <div class="setting-label">Date Format</div>
+                <div class="select-wrapper">
+                    <select class="setting-select" id="date-format">
+                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                        <option value="DD/MM/YYYY" selected>DD/MM/YYYY</option>
+                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="setting-label">Time Format</div>
+                <div class="select-wrapper">
+                    <select class="setting-select" id="time-format">
+                        <option value="12h">12-hour (AM/PM)</option>
+                        <option value="24h" selected>24-hour</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="setting-label">First Day of Week</div>
+                <div class="select-wrapper">
+                    <select class="setting-select" id="first-day">
+                        <option value="sunday">Sunday</option>
+                        <option value="monday" selected>Monday</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <div class="setting-label">Currency Display</div>
+                <div class="select-wrapper">
+                    <select class="setting-select" id="currency">
+                        <option value="USD">USD ($)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP" selected>GBP (£)</option>
+                        <option value="JPY">JPY (¥)</option>
+                        <option value="CNY">CNY (¥)</option>
+                        <option value="BTC">BTC (₿)</option>
+                        <option value="USDT">USDT (₮)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Language Preferences -->
+        <div class="language-preferences-section">
+            <div class="section-title">Language Preferences</div>
+            
+            <div class="preference-item">
+                <div class="preference-info">
+                    <div class="preference-title">Auto-detect Language</div>
+                    <div class="preference-desc">Automatically detect language based on your location</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            
+            <div class="preference-item">
+                <div class="preference-info">
+                    <div class="preference-title">Translate Notifications</div>
+                    <div class="preference-desc">Automatically translate notifications to your language</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            
+            <div class="preference-item">
+                <div class="preference-info">
+                    <div class="preference-title">Enable Right-to-Left Support</div>
+                    <div class="preference-desc">For languages like Arabic, Hebrew, and Persian</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="language-footer">
+        <button class="save-btn">Save Changes</button>
+        <button class="reset-btn">Reset to Default</button>
+        <button class="back-button" data-page="assets-page">Back</button>
+    </div>
+</div>
 
 
         <div class="bottom-nav">
